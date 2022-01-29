@@ -10,211 +10,22 @@
 
         <ul>
 
-
-          <li class="selected">
+          <li
+              :class="getRepos.selectedIndex === key ? 'selected': ''"
+              v-for="(repo,key) in getRepos.list"
+              :key="key"
+              @click.stop="selectRepo(key)"
+          >
             <div class="title">
-              expression-evaluator
+              {{ repo.title }}
             </div>
             <div class="sub-content">
               <div class="language">
-                V
+                {{ repo.language }}
               </div>
             </div>
           </li>
 
-          <li>
-            <div class="title">
-              expression-evaluator
-            </div>
-            <div class="sub-content">
-              <div class="language">
-                V
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="title">
-              expression-evaluator
-            </div>
-            <div class="sub-content">
-              <div class="language">
-                V
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="title">
-              expression-evaluator
-            </div>
-            <div class="sub-content">
-              <div class="language">
-                V
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="title">
-              expression-evaluator
-            </div>
-            <div class="sub-content">
-              <div class="language">
-                V
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="title">
-              expression-evaluator
-            </div>
-            <div class="sub-content">
-              <div class="language">
-                V
-              </div>
-            </div>
-          </li>
-
-          <li>
-            <div class="title">
-              expression-evaluator
-            </div>
-            <div class="sub-content">
-              <div class="language">
-                V
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="title">
-              expression-evaluator
-            </div>
-            <div class="sub-content">
-              <div class="language">
-                V
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="title">
-              expression-evaluator
-            </div>
-            <div class="sub-content">
-              <div class="language">
-                V
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="title">
-              expression-evaluator
-            </div>
-            <div class="sub-content">
-              <div class="language">
-                V
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="title">
-              expression-evaluator
-            </div>
-            <div class="sub-content">
-              <div class="language">
-                V
-              </div>
-            </div>
-          </li>
-
-          <li>
-            <div class="title">
-              expression-evaluator
-            </div>
-            <div class="sub-content">
-              <div class="language">
-                V
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="title">
-              expression-evaluator
-            </div>
-            <div class="sub-content">
-              <div class="language">
-                V
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="title">
-              expression-evaluator
-            </div>
-            <div class="sub-content">
-              <div class="language">
-                V
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="title">
-              expression-evaluator
-            </div>
-            <div class="sub-content">
-              <div class="language">
-                V
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="title">
-              expression-evaluator
-            </div>
-            <div class="sub-content">
-              <div class="language">
-                V
-              </div>
-            </div>
-          </li>
-
-          <li>
-            <div class="title">
-              expression-evaluator
-            </div>
-            <div class="sub-content">
-              <div class="language">
-                V
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="title">
-              expression-evaluator
-            </div>
-            <div class="sub-content">
-              <div class="language">
-                V
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="title">
-              expression-evaluator
-            </div>
-            <div class="sub-content">
-              <div class="language">
-                V
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="title">
-              expression-evaluator
-            </div>
-            <div class="sub-content">
-              <div class="language">
-                V
-              </div>
-            </div>
-          </li>
 
         </ul>
 
@@ -222,9 +33,9 @@
 
       <div class="actions">
         <div class="info">
-          Lorem ipsum<br>
-          6 Stars<br>
-          7 Forks
+          {{ meta.description }}<br>
+          Stars: {{ meta.stars }}<br>
+          Forks: {{ meta.forks }}
         </div>
         <div class="buttons">
           <a href="#">View project</a>
@@ -238,12 +49,35 @@
 </template>
 
 <script>
+import {mapActions, mapGetters} from "vuex";
+
 export default {
-  name: 'RepoList'
+  name: 'Repos',
+  data: function() {
+    return {
+      meta: {
+        description: '',
+        stars: 0,
+        forks: 0,
+      }
+    };
+  },
+  methods: {
+    ...mapActions(["saveRepoData"]),
+    selectRepo(key) {
+      let repos = this.getRepos;
+      if(repos.list[key] !== undefined) {
+        repos.selectedIndex = key
+        this.saveRepoData(repos)
+      }
+    }
+  },
+  computed: {
+    ...mapGetters(["getRepos"])
+  },
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
 .container {
