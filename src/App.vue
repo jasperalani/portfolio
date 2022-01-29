@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Logo />
+    <RepoList />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import RepoList from './components/RepoList.vue'
+import Logo from './components/Logo.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    RepoList,
+    Logo
   }
 }
 </script>
@@ -25,4 +27,25 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 </style>
