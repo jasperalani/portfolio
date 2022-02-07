@@ -5,7 +5,6 @@ import VueRouter from 'vue-router'
 import repos from './components/RepoList'
 import store from './components/store/index'
 
-
 Vue.config.productionTip = false
 Vue.use(VueRouter);
 

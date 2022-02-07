@@ -1,5 +1,5 @@
 <template>
-  <img alt="Design" src="../assets/JAAvatar.webp">
+  <img alt="Design" src="../assets/images/JAAvatar.webp">
 </template>
 
 <script>

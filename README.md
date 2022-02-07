@@ -1,8 +1,22 @@
 # portfolio
 
+Todos:
+- Sorting
+- Language -> Languages
+- Add watchers
+- Link stars, forks and watchers to GitHub page
+- Replace text with icons where applicable
+
 ## Project setup
 ```
 npm install
+```
+
+Create env.js file in src/ and enter
+```
+export default {
+    GITHUB_PERSONAL_ACCESS_TOKEN: '{Your access token}'
+}
 ```
 
 ### Compiles and hot-reloads for development

@@ -19,6 +19,42 @@ export default {
 </script>
 
 <style>
+
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("./assets/fonts/SourceCodePro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("./assets/fonts/SourceCodePro-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("./assets/fonts/SourceCodePro-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("./assets/fonts/SourceCodePro-Light.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("./assets/fonts/SourceCodePro-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
