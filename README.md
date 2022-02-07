@@ -1,11 +1,12 @@
 # portfolio
 
-Todos:
+Todos (in no particular order):
 - Sorting
 - Language -> Languages
 - ~~Add watchers~~
 - Link stars, forks and watchers to GitHub page
 - Replace text with icons where applicable
+- Mobile styling
 
 ## Project setup
 ```
