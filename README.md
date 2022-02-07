@@ -3,7 +3,7 @@
 Todos:
 - Sorting
 - Language -> Languages
-- Add watchers
+- ~~Add watchers~~
 - Link stars, forks and watchers to GitHub page
 - Replace text with icons where applicable
 
