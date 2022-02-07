@@ -1,6 +1,8 @@
 # portfolio
 
 Todos (in no particular order):
+- About page
+- Host the best ones
 - Sorting
 - Language -> Languages
 - ~~Add watchers~~
