@@ -70,7 +70,7 @@ export default {
     ...mapActions(["saveRepoData"]),
     getReposFromGithub() {
       const octokit = new Octokit({
-        auth: env.GITHUB_PERSONAL_ACCESS_TOKEN,
+        auth: process.env.GITHUB_PERSONAL_ACCESS_TOKEN,
       });
       octokit.request("GET /users/jasperalani/repos").then(data => {
         let repoData = {
