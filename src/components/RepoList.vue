@@ -61,7 +61,6 @@
 
 <script>
 import {mapActions, mapGetters} from "vuex";
-import env from '../env';
 const { Octokit } = require("@octokit/rest");
 
 export default {
