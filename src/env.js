@@ -1,3 +1,0 @@
-export default {
-    GITHUB_PERSONAL_ACCESS_TOKEN: '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'
-}
